@@ -8,14 +8,14 @@ var path = null
 var path_finder = null
 var attack = false
 
-onready var hitbox = $HitboxArea
+onready var collision_area = $HitboxArea
 onready var animation = $ani_monster/AnimationPlayer
 
 func _ready():
 	
 	self.set_physics_process(false)
 	
-	hitbox.connect("body_entered", self, "on_hit_player")
+	collision_area.connect("body_entered", self, "on_hit_player")
 	path_finder = PathFinder.new(get_parent(), 1)
 	
 	animation.play("Run")

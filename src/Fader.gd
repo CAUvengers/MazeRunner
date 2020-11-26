@@ -12,9 +12,11 @@ func fade_in():
 	
 func fade_out():
 	animation_player.play("fade_out")
-	
-func on_animation_finished(name):
-	emit_signal("fade_finished")
 
 func set_playback_speed(speed):
 	animation_player.playback_speed = speed
+
+func on_animation_finished(name):
+	emit_signal("fade_finished")
+
+
