@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/default_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/murder.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/audio/monster_growl.wav" type="AudioStream" id=3]
+[ext_resource path="res://src/DefeatScene.gd" type="Script" id=4]
+[ext_resource path="res://src/menu_components/MainMenu.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 2 )
+
+[node name="DefeatScene" type="Spatial"]
+script = ExtResource( 4 )
+main_menu = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Control/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 333.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.65098, 0, 0, 1 )
+text = "You've Got
+Infected"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/Control/VBoxContainer"]
+margin_top = 337.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Control/VBoxContainer/CenterContainer"]
+margin_left = 436.0
+margin_top = 89.0
+margin_right = 587.0
+margin_bottom = 173.0
+
+[node name="MainMenuButton" type="Button" parent="ColorRect/Control/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 151.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="ColorRect/Control/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 151.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit Game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true

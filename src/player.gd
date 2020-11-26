@@ -34,6 +34,7 @@ func _ready():
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+
 func _physics_process(delta):
 	
 	if is_dying:
@@ -133,4 +134,4 @@ func on_area_entered(area):
 		emit_signal("orb_collected")
 		
 func on_fade_finished():
-	get_tree().change_scene("res://src/menu_components/MainMenu.tscn")
+	get_tree().change_scene("res://src/DefeatScene.tscn")
