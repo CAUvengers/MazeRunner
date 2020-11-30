@@ -5,4 +5,4 @@
 [node name="ani_monster" instance=ExtResource( 2 )]
 
 [node name="AnimationPlayer" parent="." index="1"]
-autoplay = "Run"
+autoplay = "Idle-loop"
